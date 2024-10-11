@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class ProductPage extends BaseTest {
 
@@ -41,4 +42,6 @@ public class ProductPage extends BaseTest {
         element.click();
         return this;
     }
+
+
 }

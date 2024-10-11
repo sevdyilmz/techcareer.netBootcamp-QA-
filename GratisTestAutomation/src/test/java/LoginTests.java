@@ -64,7 +64,7 @@ public class LoginTests extends BaseTest {
         login.fillMail(mail)
                 .clickLoginButton();
         sleep(3000);
-        String value = login.errorMessage();
+        String value = login.errorMessagePassword();
         assertEquals(value, "Bu alan zorunludur");
 
     }

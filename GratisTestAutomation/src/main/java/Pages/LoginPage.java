@@ -7,14 +7,14 @@ import org.openqa.selenium.WebElement;
 public class LoginPage extends BaseTest {
 
     public LoginPage fillMail(String text) {
-        WebElement element = driver.findElement(By.cssSelector("[class='ng-untouched ng-pristine ng-invalid']"));
+        WebElement element = driver.findElement(By.xpath("//app-root/app-custom-storefront[@role='presentation']//cx-page-layout[@class='LoginPageTemplate ng-star-inserted']/cx-page-slot[@class='LeftContentSlot has-components ng-star-inserted']/app-custom-login-form[@class='ng-star-inserted']/section//app-custom-form-for-login/form//input[@type='text']"));
         element.clear();
         element.sendKeys(text);
         return this;
     }
 
     public LoginPage fillPassword(String text) {
-        WebElement element = driver.findElement(By.cssSelector("[class='ng-untouched ng-pristine ng-invalid']"));
+        WebElement element = driver.findElement(By.xpath("//app-root/app-custom-storefront[@role='presentation']//cx-page-layout[@class='LoginPageTemplate ng-star-inserted']/cx-page-slot[@class='LeftContentSlot has-components ng-star-inserted']/app-custom-login-form[@class='ng-star-inserted']/section//app-custom-form-for-login/form//input[@type='password']"));
         element.clear();
         element.sendKeys(text);
         return this;
@@ -50,9 +50,15 @@ public class LoginPage extends BaseTest {
     }
     public String errorMessage(){
 
-        String value = driver.findElement(By.cssSelector("[class='control-invalid control-touched ng-star-inserted']")).getText();
+        String value = driver.findElement(By.cssSelector(".ng-star-inserted.control-invalid .ng-star-inserted")).getText();
         return value;
 
+    }
+
+    public String errorMessagePassword(){
+
+        String value=driver.findElement(By.cssSelector(".form-group.pusher > cx-form-errors[role='alert'] > .ng-star-inserted")).getText();
+        return value;
     }
     public String errorMessage1(){
 

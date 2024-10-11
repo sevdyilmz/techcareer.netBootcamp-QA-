@@ -41,7 +41,7 @@ public class BasketTests extends BaseTest {
                   .goToBasket();
         sleep(3000);
         basketPage.deleteTheProduct();
-        sleep(2000);
+        sleep(3000);
         String value=basketPage.emptyBasketMessage();
         assertEquals(value,"Sepetin şu an boş\n" +
                 "Gratis’in mükemmel ürünleri için hemen alışverişe devam et. İstersen favori ürünlerine bak ya da aşağıda senin için önerdiğimiz ürünleri incele!");

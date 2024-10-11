@@ -2,15 +2,18 @@ import Base.BaseTest;
 import Pages.BasketPage;
 import Pages.MainPage;
 import Pages.ProductPage;
+import io.qameta.allure.Description;
+import io.qameta.allure.Feature;
 import org.testng.annotations.Test;
 
+@Feature("Alışveriş Sepeti Test Senaryoları")
 public class BasketTests extends BaseTest {
 
     MainPage mainPage=new MainPage();
     ProductPage product=new ProductPage();
     BasketPage basketPage=new BasketPage();
 
-    @Test
+    @Test (description="Sepete başarılı bir şekilde ürün ekleme")
     public void addProductToBasket() throws InterruptedException {
 
         mainPage.acceptCoocies()
@@ -26,7 +29,7 @@ public class BasketTests extends BaseTest {
 
 
     }
-    @Test
+    @Test (description = "Sepetten başarılı bir sekilde ürün silme")
     public void deleteProductFromBasket() throws InterruptedException {
 
         mainPage.acceptCoocies()

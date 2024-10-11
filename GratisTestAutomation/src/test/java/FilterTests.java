@@ -1,6 +1,7 @@
 import Base.BaseTest;
 import Pages.MainPage;
 import Pages.ProductPage;
+import io.qameta.allure.Feature;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -9,12 +10,13 @@ import org.testng.annotations.Test;
 import java.util.List;
 import java.util.regex.Pattern;
 
+@Feature("Filtreleme Test Senaryoları")
 public class FilterTests extends BaseTest {
 
     MainPage mainPage = new MainPage();
     ProductPage productPage = new ProductPage();
 
-    @Test
+    @Test (description = "Arama Çubuğu'na yazılan kelime ile filtreleme")
     public void searchBoxControl() throws InterruptedException {
 
         mainPage.searchBox("ruj");
@@ -31,7 +33,7 @@ public class FilterTests extends BaseTest {
 
     }
 
-    @Test
+    @Test (description = "Alt kategori seçilerek filtreleme")
     public void subFiltersControl() throws InterruptedException {
 
         mainPage.searchBox("ruj");

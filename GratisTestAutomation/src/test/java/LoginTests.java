@@ -1,14 +1,16 @@
 import Base.BaseTest;
 import Pages.LoginPage;
 import Pages.MainPage;
+import io.qameta.allure.Feature;
 import org.testng.annotations.Test;
 
+@Feature("Login Test Senaryoları")
 public class LoginTests extends BaseTest {
 
     LoginPage login = new LoginPage();
     MainPage mainPage = new MainPage();
 
-    @Test
+    @Test (description = "Başarılı giriş")
     public void LoginSuccessful() throws InterruptedException {
 
         mainPage.acceptCoocies();
@@ -26,7 +28,7 @@ public class LoginTests extends BaseTest {
 
     }
 
-    @Test
+    @Test (description = "Zorunlu alanlar")
     public void requiredMailPasswordControl() throws InterruptedException {
 
         mainPage.acceptCoocies();
@@ -40,7 +42,7 @@ public class LoginTests extends BaseTest {
 
     }
 
-    @Test
+    @Test  (description = "Mailin girilmeme durumu")
     public void requiredMailControl() throws InterruptedException {
 
         mainPage.acceptCoocies();
@@ -54,7 +56,7 @@ public class LoginTests extends BaseTest {
         assertEquals(value, "Bu alan zorunludur");
 
     }
-    @Test
+    @Test (description = "Şifrenin girilmeme durumu")
     public void requiredPasswordControl() throws InterruptedException {
 
         mainPage.acceptCoocies();
@@ -68,7 +70,7 @@ public class LoginTests extends BaseTest {
         assertEquals(value, "Bu alan zorunludur");
 
     }
-    @Test
+    @Test (description = "Geçersiz mail formatı")
     public void invalidMailControl() throws InterruptedException {
 
         mainPage.acceptCoocies();
@@ -85,7 +87,7 @@ public class LoginTests extends BaseTest {
 
     }
 
-    @Test
+    @Test (description = "Geçersiz şifre")
     public void invalidPasswordControl() throws InterruptedException {
 
         mainPage.acceptCoocies();
